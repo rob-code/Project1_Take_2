@@ -16,9 +16,10 @@ get '/transactions/new' do
 end
 
 post '/transactions' do
-transaction = Transaction.new(params)
-transaction.save
-redirect to("dashboard")
+@transaction = Transaction.new(params)
+@transaction.save
+@categories = Category.return_by_id(@transaction.category_id)
+erb(:'transactions/confirm')
 end
 
 get '/transactions/:id/edit' do
