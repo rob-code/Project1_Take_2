@@ -3,24 +3,23 @@ require_relative('../db/sql_runner.rb')
 class Target
 
   attr_accessor :amount, :category_id
-  attr_reader :id, :user_id
+  attr_reader :id
 
   def initialize (options)
     @id = options['id'].to_i
     @amount = options['amount'].to_f
     @category_id = options['category_id'].to_i
-    @user_id = options['user_id'].to_i
   end
 
-def self.target_by_user(id_required)
-  sql = "SELECT * FROM targets WHERE user_id = #{id_required}"
-  target = SqlRunner.run(sql)
-  result = Target.new(target.first)
-  return result
-end
+# def self.target_by_user(id_required)
+#   sql = "SELECT * FROM targets WHERE user_id = #{id_required}"
+#   target = SqlRunner.run(sql)
+#   result = Target.new(target.first)
+#   return result
+# end
 
   def save
-    sql = "INSERT INTO targets (amount, category_id, user_id) VALUES (#{@amount}, #{@category_id}, #{@user_id}) RETURNING id"
+    sql = "INSERT INTO targets (amount, category_id) VALUES (#{@amount}, #{@category_id}) RETURNING id"
     user = SqlRunner.run(sql).first
     @id = user['id'].to_i
   end
@@ -43,11 +42,7 @@ end
   end
 
   def update()
-    sql = "UPDATE targets SET
-    amount = #{@amount},
-    category_id = #{@category_id},
-    user_id = #{user_id}
-    WHERE id = #{@id}"
+    sql = "UPDATE targets SET amount = #{@amount}, category_id = #{@category_id} WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

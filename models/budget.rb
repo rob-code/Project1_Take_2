@@ -3,23 +3,22 @@ require_relative('../db/sql_runner.rb')
 class Budget
 
   attr_accessor :total_budget 
-  attr_reader :id, :user_id
+  attr_reader :id
 
   def initialize (options)
     @id = options['id'].to_i
     @total_budget = options['total_budget'].to_f
-    @user_id = options['user_id'].to_i
   end
 
-  def self.budget_by_user(id_required)
-    sql = "SELECT * FROM budgets WHERE user_id = #{id_required}"
-    budget = SqlRunner.run(sql)
-    result = Budget.new(budget.first)
-    return result
-  end
+  # def self.budget_by_user(id_required)
+  #   sql = "SELECT * FROM budgets WHERE user_id = #{id_required}"
+  #   budget = SqlRunner.run(sql)
+  #   result = Budget.new(budget.first)
+  #   return result
+  # end
 
   def save
-    sql = "INSERT INTO budgets (total_budget, user_id) VALUES (#{@total_budget}, #{@user_id}) RETURNING id"
+    sql = "INSERT INTO budgets (total_budget) VALUES (#{@total_budget}) RETURNING id"
     user = SqlRunner.run(sql).first
     @id = user['id'].to_i
   end
@@ -43,9 +42,7 @@ class Budget
 
   def update()
     sql = "UPDATE budgets SET
-    total_budget = #{@total_budget},
-    user_id = #{@user_id}
-    WHERE id = #{@id}"
+    total_budget = #{@total_budget} WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

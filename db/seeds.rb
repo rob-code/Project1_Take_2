@@ -1,4 +1,3 @@
-require_relative( '../models/user.rb' )
 require_relative( '../models/budget.rb' )
 require_relative( '../models/category.rb' )
 require_relative( '../models/transaction.rb' )
@@ -6,22 +5,10 @@ require_relative( '../models/target.rb' )
 
 require('pry-byebug')
 
-User.delete_all
+Budget.delete_all
 Category.delete_all
+Target.delete_all
 Transaction.delete_all
-
-user1 = User.new({
-'first_name' => "Rich",
-'second_name' => "Person"
-})
-
-user2 = User.new({
-'first_name' => "Poor",
-'second_name' => "Person"
-})
-
-user1.save
-user2.save
 
 budget1 = Budget.new({
 'total_budget' => 3000,
@@ -75,24 +62,20 @@ category7.save
 
 target1 = Target.new({
 'amount' => 30,
-'category_id' => category1.id,
-'user_id' => user1.id
+'category_id' => category1.id
 })
 target2 = Target.new({
 'amount' => 200,
-'category_id' => category6.id,
-'user_id' => user1.id
+'category_id' => category6.id
 })
 target3 = Target.new({
 'amount' => 25,
-'category_id' => category7.id,
-'user_id' => user2.id
+'category_id' => category7.id
 })
 
 target4 = Target.new({
 'amount' => 150,
-'category_id' => category1.id,
-'user_id' => user2.id
+'category_id' => category1.id
 })
 
 target1.save
@@ -104,59 +87,47 @@ target4.save
 transaction1 = Transaction.new({
 'merchant_name' => "Waitrose",
 'amount' => 37,
-'category_id' => category1.id,
-'user_id' => user1.id
+'category_id' => category1.id
 })
 transaction2 = Transaction.new({
 'merchant_name' => "Marks and Spencer",
 'amount' => 120,
-'category_id' => category6.id,
-'user_id' => user1.id
+'category_id' => category6.id
 })
 transaction3 = Transaction.new({
 'merchant_name' => "Lidl",
 'amount' => 27,
-'category_id' => category1.id,
-'user_id' => user2.id
+'category_id' => category1.id
 })
 transaction4 = Transaction.new({
 'merchant_name' => "PriMark",
 'amount' => 18,
-'category_id' => category6.id,
-'user_id' => user2.id
+'category_id' => category6.id
 })
 transaction5 = Transaction.new({
 'merchant_name' => "Tesco",
 'amount' => 18,
-'category_id' => category1.id,
-'user_id' => user1.id
+'category_id' => category1.id
 })
-
-
 transaction6 = Transaction.new({
 'merchant_name' => "Lidl",
 'amount' => 190,
-'category_id' => category1.id,
-'user_id' => user1.id
+'category_id' => category1.id
 })
-
 transaction7 = Transaction.new({
 'merchant_name' => "Tesco",
 'amount' => 120,
-'category_id' => category1.id,
-'user_id' => user1.id
+'category_id' => category1.id
 })
 transaction8 = Transaction.new({
 'merchant_name' => "TalkTalk",
 'amount' => 120,
-'category_id' => category4.id,
-'user_id' => user1.id
+'category_id' => category4.id
 })
 transaction9 = Transaction.new({
 'merchant_name' => "Pizza Express",
 'amount' => 120,
-'category_id' => category5.id,
-'user_id' => user1.id
+'category_id' => category5.id
 })
 
 
