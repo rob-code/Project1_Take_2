@@ -33,11 +33,11 @@
 
 <p>Spend by category:</p>
 
-<% @totals.each do |transaction| %>
+<% @totals.each do |category| %>
 
-<p><%=transaction['name'] %> : £ <%=sprintf("%20.2f", transaction['sum'].to_f) %> </p>
+<p><%=category['name'] %> : £ <%=sprintf("%20.2f", category['sum'].to_f) %> </p>
 
-<a href="/xxxx/ %> ">View/Edit all transactions for <%=transaction['name'] %> </a>
+<a href="/categories/<%= category['id']%>">view or edit all transactions for <%=category['name'] %> </a>
 <hr />
 
 <% end %>

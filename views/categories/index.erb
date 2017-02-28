@@ -1,0 +1,29 @@
+<p>Transactions for <%= @category.name %></p>
+
+<% @transactions.each do |transaction| %>
+
+<% if transaction.category_id == @category.id %>
+
+<p><%=transaction.merchant_name %> : £ <%= sprintf("%20.2f", transaction.amount) %> </p>
+
+
+<form method="GET" action="/categories/???">
+  <input class="button" type="submit" value="Edit">
+</form>
+
+
+<form method="POST" action="/categories/???">
+  <input class="button" type="submit" value="Delete">
+</form>
+
+<hr />
+
+<% end %>
+<% end %>
+
+
+
+
+
+
+
