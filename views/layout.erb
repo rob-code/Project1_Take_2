@@ -11,6 +11,9 @@
 <h1>Money CashBoard</h1>
 </div>
 
+
+
+<% if request.fullpath != "/dashboard" %>
 <nav>
   <ul>
     <li>
@@ -18,7 +21,7 @@
     </li>
   </ul>
 </nav>
-
+<% end %>
 
 
 <%= yield %>
