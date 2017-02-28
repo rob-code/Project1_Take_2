@@ -1,4 +1,4 @@
-<div class="head-result">
+
 
 <% total_budget = 0 %>
 <% spend = 0 %>
@@ -7,38 +7,67 @@
 <% @budgets.each do |budget| %>
 <% total_budget = budget.total_budget %>
 <% budget_id = budget.id %>
-<p>Your budget is: £ <%= sprintf("%20.2f", budget.total_budget) %></p>
+
+<div class="headline-figures">
+
+<div class="grid-row">
+  <div class="cell1">Budget: </div>
+  <div class="cell2"> £ <%= sprintf("%20.2f", budget.total_budget) %> </div>
+</div>
+
 <% end %>
 
 <% @transactions.each do |transaction| %>
   <% spend = spend + transaction.amount %>
 <% end %>
 
-<p>Your total spend is: £ <%= sprintf("%20.2f", spend) %></p>
+<div class="grid-row">
+<div class="cell1">Total spend: </div>
+<div class="cell2"> £ <%= sprintf("%20.2f", spend) %></div>
+</div>
 
+<div class="grid-row">
+<div class="cell1">Amount Remaining: </div>
 
-<p>Amount remaining £ <%= sprintf("%20.2f", total_budget.to_f - spend.to_f) %></p>
+<div class="cell2"> £ <%= sprintf("%20.2f", total_budget.to_f - spend.to_f) %></div>
+</div>
+
+</div>
+
 
 <div class="dashboard-highlight-menu">
-<p=><a href="/transactions/new">Create new transaction</a></p>
+
+<p><a href="/transactions/new">Create new transaction</a></p>
 
 <p><a href="/transactions">View all transactions</a></p>
 
 <p><a href="/budgets/<%= budget_id %>/edit">Edit your budget</a></p>
-</div>
 
 </div>
+
 
 <hr />
 
-<p>Spend by category:</p>
+<div class="category-title">
+<p>Spend by Category</p>
+</div>
+
+<div class="category-item">
+
+
 
 <% @totals.each do |category| %>
 
-<p><%=category['name'] %> : £ <%=sprintf("%20.2f", category['sum'].to_f) %> </p>
+<div class="grid-row">
 
-<a href="/categories/<%= category['id']%>">view or edit all transactions for <%=category['name'] %> </a>
-<hr />
+<div class="cell"><%=category['name'] %> </div>
+ <div class="cell">£ <%=sprintf("%20.2f", category['sum'].to_f) %> </div>
+ <div class="cell">
+ <form action="/categories/<%= category['id']%>">
+     <input type="submit" value="view/edit transactions" />
+ </form>
+ </div>
+
+ </div>
 
 <% end %>
-
