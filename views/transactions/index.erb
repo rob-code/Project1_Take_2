@@ -1,10 +1,10 @@
-<p><%= @user.first_name %>, these are all your transactions:</p>
+<p>All transactions:</p>
 
-<% @categories.map do |category| %>
+<% @categories.each do |category| %>
 
 <% title = true %>
 
-<% @transactions.map do |transaction| %>
+<% @transactions.each do |transaction| %>
 
 <% if transaction.category_id == category.id %>
 

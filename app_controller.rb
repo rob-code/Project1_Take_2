@@ -10,7 +10,7 @@ require_relative('controllers/transactions_controller')
 get '/dashboard' do
   @budgets = Budget.all()
   @transactions = Transaction.all()
-  @totals = Transaction.spend_by_category
+  @totals = Transaction.spend_by_category()
   @targets = Target.all()
   @categories = Category.all()
   erb(:dashboard)

@@ -2,9 +2,11 @@
 
 <% total_budget = 0 %>
 <% spend = 0 %>
+<% budget_id = 0 %>
 <!-- loop round @budgets because its an array of hashes-->
 <% @budgets.each do |budget| %>
 <% total_budget = budget.total_budget %>
+<% budget_id = budget.id %>
 <p>Your budget is: £ <%= sprintf("%20.2f", budget.total_budget) %></p>
 <% end %>
 
@@ -19,11 +21,11 @@
 
 <hr />
 
-<p><a href="/transactions">Create new transaction</a></p>
+<p><a href="/transactions/new">Create new transaction</a></p>
 
-<p><a href="/transactions">View all transactions</a></p>
+<p><a href="/transactions/index">View all transactions</a></p>
 
-<p><a href="/targets">Edit spending targets</a></p>
+<p><a href="/budgets/<%= budget_id %>/edit">Edit your budget</a></p>
 
 <hr />
 
