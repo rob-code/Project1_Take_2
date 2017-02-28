@@ -17,6 +17,21 @@ class Transaction
   #   return self.get_many(sql)
   # end
 
+# def total_spend()
+#   sql = "SELECT SUM(transactions.amount) FROM transactions"
+#   total_spend = SqlRunner.run(sql).first
+#   return total_spend['sum'].to_f
+# end
+
+def self.spend_by_category()
+  sql = "SELECT categories.id, categories.name, SUM(transactions.amount) FROM transactions INNER JOIN categories ON categories.id = transactions.category_id GROUP BY categories.id"
+  return SqlRunner.run(sql)
+  # totals = SqlRunner.run(sql)
+  # totals.each do |total|
+  #     puts "#{total['name']} = #{total['sum']}"
+  #  end 
+end
+
 
   def self.subcategories(cat_id)
     sql = "SELECT * FROM transactions WHERE category_id = #{cat_id}"

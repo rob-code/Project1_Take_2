@@ -19,8 +19,8 @@ class Budget
 
   def save
     sql = "INSERT INTO budgets (total_budget) VALUES (#{@total_budget}) RETURNING id"
-    user = SqlRunner.run(sql).first
-    @id = user['id'].to_i
+    budget = SqlRunner.run(sql).first
+    @id = budget['id'].to_i
   end
 
   def self.delete_all()

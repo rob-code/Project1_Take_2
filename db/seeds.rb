@@ -11,17 +11,10 @@ Target.delete_all
 Transaction.delete_all
 
 budget1 = Budget.new({
-'total_budget' => 3000,
-'user_id' => user1.id
-})
-
-budget2 = Budget.new({
-'total_budget' => 800,
-'user_id' => user2.id
+'total_budget' => 3000
 })
 
 budget1.save
-budget2.save
 
 category1 = Category.new({
 'name' => 'Food'

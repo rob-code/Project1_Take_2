@@ -1,22 +1,29 @@
-<div class="welcome-tag">
-<p>Welcome <%= "#{@user.first_name}" %></p>
-</div>
-
 <div class="head-result">
 
-<p>Your budget is: £ <%= sprintf("%20.2f", @user.budget) %></p>
+<% total_budget = 0 %>
+<% spend = 0 %>
+<!-- loop round @budgets because its an array of hashes-->
+<% @budgets.each do |budget| %>
+<% total_budget = budget.total_budget %>
+<p>Your budget is: £ <%= sprintf("%20.2f", budget.total_budget) %></p>
+<% end %>
 
-<p>Total spend: £ <%= sprintf("%20.2f", @user.total_spend) %></p>
+<% @transactions.each do |transaction| %>
+  <% spend = spend + transaction.amount %>
+<% end %>
 
-<p>Amount remaining £ <%= sprintf("%20.2f", @user.budget.to_f - @user.total_spend.to_f) %></p>
+<p>Your total spend is: £ <%= sprintf("%20.2f", spend) %></p>
+
+
+<p>Amount remaining £ <%= sprintf("%20.2f", total_budget.to_f - spend.to_f) %></p>
 
 <hr />
 
-<p><a href="/new_transaction/<%= @user.id %>">Create new transaction</a></p>
+<p><a href="/transactions">Create new transaction</a></p>
 
-<p><a href="/all_transactions/<%= @user.id %>">View all transactions</a></p>
+<p><a href="/transactions">View all transactions</a></p>
 
-<p><a href="/edit_targets/<%= @user.id %>">Edit spending targets</a></p>
+<p><a href="/targets">Edit spending targets</a></p>
 
 <hr />
 
@@ -24,14 +31,12 @@
 
 <p>Spend by category:</p>
 
+<% @totals.each do |transaction| %>
 
-<% @user.spend_by_category.map do |total| %>
+<p><%=transaction['name'] %> : £ <%=sprintf("%20.2f", transaction['sum'].to_f) %> </p>
 
-<p><%=total['name'] %> : £ <%=sprintf("%20.2f", total['sum'].to_f) %> </p>
-<a href="/sub_cat/<%= @user.id %>/<%= total['id'] %> ">View/Edit all transactions for <%=total['name'] %> </a>
+<a href="/xxxx/ %> ">View/Edit all transactions for <%=transaction['name'] %> </a>
 <hr />
 
 <% end %>
-
-
 
