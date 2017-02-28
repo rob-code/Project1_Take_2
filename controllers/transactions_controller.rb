@@ -4,7 +4,7 @@ require('pry-byebug')
 
 require('./models/transaction.rb')
 
-get '/transactions/index' do
+get '/transactions' do
 @transactions = Transaction.all
 @categories = Category.all
 erb(:"transactions/index")
