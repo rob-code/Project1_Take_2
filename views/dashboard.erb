@@ -19,17 +19,17 @@
 
 <p>Amount remaining £ <%= sprintf("%20.2f", total_budget.to_f - spend.to_f) %></p>
 
-<hr />
-
-<p><a href="/transactions/new">Create new transaction</a></p>
+<div class="dashboard-highlight-menu">
+<p=><a href="/transactions/new">Create new transaction</a></p>
 
 <p><a href="/transactions">View all transactions</a></p>
 
 <p><a href="/budgets/<%= budget_id %>/edit">Edit your budget</a></p>
-
-<hr />
+</div>
 
 </div>
+
+<hr />
 
 <p>Spend by category:</p>
 

@@ -40,12 +40,19 @@ li {
 text-align: center;
 }
 
-.welcome-tag > p {
-font-size: 16px;
-text-align: right;
-padding-right: 2%;
-color: rgb(100, 156, 0);
+.dashboard-highlight-menu {
+padding-top: 5px;
+padding-bottom: 5px;
+width: 80%;
+background-color: rgba(100, 156, 0, .2);
+margin: auto;
+
 }
 
+.dashboard-highlight-menu p {
+  display: inline-block;
+  padding:10px;
 
 
+
+}
