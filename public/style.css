@@ -56,6 +56,12 @@ text-align: center;
   color: rgba(100, 156, 0, 1);
 }
 
+.nav-link a{
+  text-decoration: none;
+  color: rgba(100, 156, 0, 1);
+  font-size: 18px;
+}
+
 hr {
   border-color: #F5F5F5;
 width: 80%;
