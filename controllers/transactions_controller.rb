@@ -35,6 +35,6 @@ end
 
 
 post '/transactions/:id/delete' do
-@transaction = Transaction.return_by_id(params[:id])
-erb(:'transactions/delete')
+Transaction.delete_by_id(params[:id])
+redirect to("dashboard")
 end
