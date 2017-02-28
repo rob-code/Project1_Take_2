@@ -1,0 +1,51 @@
+
+* {font-family: sans-serif, Arial;}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 30px;
+  font-style: normal;
+  text-align: right;
+  padding-right: 2%;
+}
+
+li {
+    display: inline;
+    padding-right: 20px;
+}
+
+.hero {
+  background-image: url(moneypots.png);
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+/*  position: relative;
+  display:block;*/
+}
+
+.hero-text-wrapper {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.header-banner {
+  padding-top: 10px;
+  padding-bottom:10px;
+  background-color: rgb(100, 156, 0);
+  width: 100%;
+}
+
+.head-result {
+text-align: center;
+}
+
+.welcome-tag > p {
+font-size: 16px;
+text-align: right;
+padding-right: 2%;
+color: rgb(100, 156, 0);
+}
+
+
+
