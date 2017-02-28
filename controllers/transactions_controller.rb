@@ -20,3 +20,21 @@ transaction = Transaction.new(params)
 transaction.save
 redirect to("dashboard")
 end
+
+get '/transactions/:id/edit' do
+@transaction = Transaction.return_by_id(params[:id])
+@categories = Category.all
+erb(:'transactions/edit')
+end
+
+post '/transactions/:id/edit' do
+@transaction = Transaction.new(params)
+@transaction.update()
+redirect to("dashboard")
+end
+
+
+post '/transactions/:id/delete' do
+@transaction = Transaction.return_by_id(params[:id])
+erb(:'transactions/delete')
+end

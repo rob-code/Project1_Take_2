@@ -7,12 +7,12 @@
 <p><%=transaction.merchant_name %> : £ <%= sprintf("%20.2f", transaction.amount) %> </p>
 
 
-<form method="GET" action="/categories/???">
+<form method="GET" action="/transactions/<%= transaction.id %>/edit">
   <input class="button" type="submit" value="Edit">
 </form>
 
 
-<form method="POST" action="/categories/???">
+<form method="POST" action="/transactions/<%= transaction.id %>/delete">
   <input class="button" type="submit" value="Delete">
 </form>
 
