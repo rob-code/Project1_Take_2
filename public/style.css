@@ -49,8 +49,6 @@ p.red {
 color: red;
 }
 
-
-
 .dashboard-highlight-menu {
 padding-top: 0px;
 padding-bottom: 0px;
@@ -96,6 +94,12 @@ width: 80%;
   display: flex;
   flex-direction: row;
 }
+
+.grid-row-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .cell1 {
   flex: 1;

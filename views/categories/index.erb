@@ -4,17 +4,28 @@
 
 <% if transaction.category_id == @category.id %>
 
-<p><%=transaction.merchant_name %> : £ <%= sprintf("%20.2f", transaction.amount) %> </p>
+<div class="grid-row">
+<div class="cell1"><%=transaction.merchant_name %> :</div>
+<div class="cell2"> £ <%= sprintf("%20.2f", transaction.amount) %> </div>
+</div>
 
 
+<div class="grid-row">
+<div class="cell1">
 <form method="GET" action="/transactions/<%= transaction.id %>/edit">
   <input class="button" type="submit" value="Edit">
 </form>
+</div>
 
-
+<div class="cell2">
 <form method="POST" action="/transactions/<%= transaction.id %>/delete">
   <input class="button" type="submit" value="Delete">
 </form>
+</div>
+
+</div>
+
+
 
 <hr />
 

@@ -24,6 +24,7 @@
 <div class="grid-row">
 <div class="cell1">Total spend: </div>
 <div class="cell2"> £ <%= sprintf("%20.2f", spend) %></div>
+
 </div>
 
 <div class="grid-row">
@@ -31,12 +32,10 @@
 
 <% balance = (total_budget.to_f - spend.to_f) %>
 <% bbr = (((total_budget.to_f - spend.to_f)/total_budget) * 100) %>
-
 <div class="cell2"> £ <%= sprintf("%20.2f", balance) %></div>
 </div>
 
 </div>
-
 
 <div class="balance-feedback">
 
