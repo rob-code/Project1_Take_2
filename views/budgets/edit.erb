@@ -4,11 +4,23 @@
 
 <form method="POST" action="/budgets/<%= @budget.id %>/update">
 
+<div class="grid-row">
+<div class="cell1">
 
-<label for="total_budget">Spending Target : </label>
+<label for="total_budget">Spending Target : </label></div>
+
+<div class="cell2">
 <input type = "number" name="total_budget" id="total_budget" value=<%= @budget.total_budget %> />
+</div>
+</div>
+
+<div class="grid-row">
+<div class="button-cell">
 
 <input type="submit" value="Set New Target"/>
+</div>
+</div>
+
 
 </form>
 
