@@ -3,6 +3,7 @@
 <% total_budget = 0 %>
 <% spend = 0 %>
 <% budget_id = 0 %>
+
 <!-- loop round @budgets because its an array of hashes-->
 <% @budgets.each do |budget| %>
 <% total_budget = budget.total_budget %>
@@ -27,8 +28,11 @@
 
 </div>
 
+
+
+
 <div class="grid-row">
-<div class="cell1">Amount Remaining: </div>
+<div class="cell1">Amount Available: </div>
 
 <% balance = (total_budget.to_f - spend.to_f) %>
 <% bbr = (((total_budget.to_f - spend.to_f)/total_budget) * 100) %>

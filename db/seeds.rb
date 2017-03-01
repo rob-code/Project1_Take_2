@@ -21,15 +21,15 @@ category1 = Category.new({
 })
 
 category2 = Category.new({
-'name' => 'Electricity Bill'
+'name' => 'Electricity'
 })
 
 category3 = Category.new({
-'name' => 'Gas Bill'
+'name' => 'Gas'
 })
 
 category4 = Category.new({
-'name' => 'Mobile Phone Bill'
+'name' => 'Mobile Phone'
 })
 
 category5 = Category.new({
