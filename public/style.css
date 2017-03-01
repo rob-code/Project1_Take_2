@@ -32,6 +32,25 @@ li {
   font-size: 25px;
 }
 
+.balance-feedback p {
+  text-align: center;
+  font-size: 25px;
+}
+
+p.green {
+color: rgba(100, 156, 0, 1);;
+}
+
+p.orange {
+color: orange;
+}
+
+p.red {
+color: red;
+}
+
+
+
 .dashboard-highlight-menu {
 padding-top: 0px;
 padding-bottom: 0px;

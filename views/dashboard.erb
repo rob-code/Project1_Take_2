@@ -29,10 +29,34 @@
 <div class="grid-row">
 <div class="cell1">Amount Remaining: </div>
 
-<div class="cell2"> £ <%= sprintf("%20.2f", total_budget.to_f - spend.to_f) %></div>
+<% balance = (total_budget.to_f - spend.to_f) %>
+<% bbr = (((total_budget.to_f - spend.to_f)/total_budget) * 100) %>
+
+<div class="cell2"> £ <%= sprintf("%20.2f", balance) %></div>
 </div>
 
 </div>
+
+
+<div class="balance-feedback">
+
+<% if (bbr <= 0) %>
+<p class="red"><%= "You've blown your budget again - call the IMF!" %></p>
+<% elsif (bbr <= 5) %>
+<p class="red"><%= "Hey... you've got to stop spending! You're running out of money!" %></p>
+<% elsif (bbr <= 15) %>
+<p class="orange"><%= "Take it easy ... you're getting close to your budget limit!" %></p>
+<% elsif (bbr < 100) %>
+<p class="green"><%= "Excellent job: your spending is safely within budget" %></p>
+<% elsif (bbr == 100) %>
+<p class="green"><%= "You havent spent anything yet!" %></p>
+<% else %>
+<p><%= "what is going on !!! I dont undertsand these figures" %></p>
+
+  <% end %>
+
+  </div>
+
 
 
 <div class="dashboard-highlight-menu">
