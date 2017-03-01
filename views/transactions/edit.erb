@@ -11,7 +11,7 @@
   <label for="merchant_name">Merchant Name:</label>
   </div>
  <div class="cell2 category-font">
-  <input type="text" id = "merchant_name" name="merchant_name" value=<%= @transaction.merchant_name %>>
+  <input type="text" id = "merchant_name" name="merchant_name" value="<%= @transaction.merchant_name %>">
 </div>
 </div>
 
@@ -20,7 +20,7 @@
   <label for="amount">Amount</label>
 </div>
  <div class="cell2 category-font">
-  <input type = "number" name="amount" id="amount" value=<%= sprintf("%20.2f", @transaction.amount) %> />
+  <input type = "number" name="amount" id="amount" step="any" value=<%= sprintf("%20.2f", @transaction.amount) %> />
   </div>
 </div>
 
@@ -42,7 +42,7 @@
 
 <div class="grid-row">
 <div class="button-cell">
-<input type="submit" value="Edit Transaction"/>
+<input type="submit" value="Update"/>
 </div>
 </div>
 </form>

@@ -42,11 +42,11 @@
 <% if (bbr <= 0) %>
 <p class="red"><%= "You've blown your budget again - call the IMF!" %></p>
 <% elsif (bbr <= 5) %>
-<p class="red"><%= "Hey... you've got to stop spending! You're running out of money!" %></p>
+<p class="red"><%= "You've just got to stop spending ... you're running out of money!" %></p>
 <% elsif (bbr <= 15) %>
 <p class="orange"><%= "Take it easy ... you're getting close to your budget limit!" %></p>
 <% elsif (bbr < 100) %>
-<p class="green"><%= "Excellent job: your spending is safely within budget" %></p>
+<p class="green"><%= "Excellent job: your spending is safely under budget" %></p>
 <% elsif (bbr == 100) %>
 <p class="green"><%= "You havent spent anything yet!" %></p>
 <% else %>

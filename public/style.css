@@ -145,6 +145,14 @@ font-size:23px;
 font-weight: normal;
 }
 
+.category-sub-title {
+text-align: center;
+font-size:23px;
+font-weight: normal;
+padding-top: 10px;
+}
+
+
 .category-item {
 text-align: center;
 font-size:23px;
