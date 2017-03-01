@@ -9,12 +9,20 @@
 <% if transaction.category_id == category.id %>
 
 <% if title  %>
-<%= "#{category.name}:</p>" %>
+<div class="category-title"><p><%= "#{category.name}" %></p></div>
 <% end %>
 <% title = false %>
 
-<p><%=transaction.merchant_name %> : £ <%=transaction.amount %> </p>
+<div class="grid-row">
+
+<div class="cell1"><%=transaction.merchant_name %> :</div>
+<div class="cell2">£ <%=transaction.amount %> </div>
+
+
+</div>
 <% end %>
+
+
 
 
 <% end %>
