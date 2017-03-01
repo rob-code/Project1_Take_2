@@ -83,9 +83,9 @@
 
 <div class="grid-row">
 
-<div class="cell"><%=category['name'] %> </div>
+<div class="cell category-font"><%=category['name'] %> </div>
  <div class="cell">£ <%=sprintf("%20.2f", category['sum'].to_f) %> </div>
- <div class="cell">
+ <div class="cell category-font">
  <form action="/categories/<%= category['id']%>">
      <input type="submit" value="view/edit transactions" />
  </form>

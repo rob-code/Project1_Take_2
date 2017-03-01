@@ -30,6 +30,7 @@ li {
 .headline-figures {
   text-align: center;
   font-size: 25px;
+  padding-top: 65px;
 }
 
 .balance-feedback p {
@@ -141,3 +142,16 @@ font-size:23px;
 font-weight: normal;
 }
 
+.category-font {
+  font-size:20px;
+  font-weight: normal;
+}
+
+input {
+  font-size:20px;
+  font-weight: normal;
+}
+select {
+  font-size:20px;
+  font-weight: normal;
+}

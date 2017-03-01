@@ -7,30 +7,30 @@
 <form method="POST" action="/transactions/<%=@transaction.id %>/edit">
 
 <div class="grid-row">
-<div class="cell1">
+<div class="cell1 category-font">
   <label for="merchant_name">Merchant Name:</label>
   </div>
- <div class="cell2">
+ <div class="cell2 category-font">
   <input type="text" id = "merchant_name" name="merchant_name" value=<%= @transaction.merchant_name %>>
 </div>
 </div>
 
 <div class="grid-row">
-<div class="cell1">
+<div class="cell1 category-font">
   <label for="amount">Amount</label>
 </div>
- <div class="cell2">
-  <input type = "number" name="amount" id="amount" value=<%= @transaction.amount %> />
+ <div class="cell2 category-font">
+  <input type = "number" name="amount" id="amount" value=<%= sprintf("%20.2f", @transaction.amount) %> />
   </div>
 </div>
 
 
 <div class="grid-row">
-<div class="cell1">
+<div class="cell1 category-font">
   <label for="category_id">Transaction Category:</label>
 </div>
 
-<div class="cell2"> 
+<div class="cell2 category-font"> 
   <select id="category_id" name="category_id">
     <% @categories.each do |category| %>
  <option value="<%= category.id %>" <%= selected="selected" if @transaction.category_id == category.id %> > <%= category.name %> </option> 

@@ -1,9 +1,9 @@
 <div class="category-title"><p>Your Transaction Has Been Created</p></div>
 
 
-<div class="category-item">
+<div class="category-item category-font">
 
-<p>Amount: £ <%= @transaction.amount %></p>
+<p>Amount: £ <%= sprintf("%20.2f", @transaction.amount) %></p>
 <p>Category: <%= @categories.name %></p>
 <p>Merchant Name: <%= @transaction.merchant_name %></p>
 </div>

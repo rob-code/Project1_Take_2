@@ -5,12 +5,12 @@
 <form method="POST" action="/budgets/<%= @budget.id %>/update">
 
 <div class="grid-row">
-<div class="cell1">
+<div class="cell1 category-font">
 
 <label for="total_budget">Spending Target : </label></div>
 
-<div class="cell2">
-<input type = "number" name="total_budget" id="total_budget" value=<%= @budget.total_budget %> />
+<div class="cell2 category-font">
+<input type = "number" name="total_budget" id="total_budget" value=<%= sprintf("%20.2f", @budget.total_budget) %> />
 </div>
 </div>
 

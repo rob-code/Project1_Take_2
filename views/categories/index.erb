@@ -5,8 +5,8 @@
 <% if transaction.category_id == @category.id %>
 
 <div class="grid-row">
-<div class="cell1"><%=transaction.merchant_name %> :</div>
-<div class="cell2"> £ <%= sprintf("%20.2f", transaction.amount) %> </div>
+<div class="cell1 category-font"><%=transaction.merchant_name %> :</div>
+<div class="cell2 category-font"> £ <%= sprintf("%20.2f", transaction.amount) %> </div>
 </div>
 
 
