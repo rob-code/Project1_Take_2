@@ -1,0 +1,32 @@
+<div class="category-title"><p>Edit Spending Category</p></div>
+
+
+
+
+
+<form method="POST" action="/categories/<%=@category.id %>/edit">
+
+<div class="grid-row">
+<div class="cell1 category-font">
+  <label for="name">Name:</label>
+  </div>
+ <div class="cell2 category-font">
+  <input type="text" id = "name" name="name" value=<%= @category.name %>>
+</div>
+</div>
+
+
+
+
+
+
+<div class="grid-row">
+<div class="button-cell">
+<input type="submit" value="Update Category"/>
+</div>
+</div>
+</form>
+
+
+
+

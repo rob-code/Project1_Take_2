@@ -164,3 +164,8 @@ select {
   font-size:18px;
   font-weight: normal;
 }
+
+.center {
+
+  text-align: center;
+}
