@@ -26,7 +26,7 @@ class Category
     return self.get_many(sql)
   end
 
-  def self.return_by_id(id_required)
+  def self.find_by_id(id_required)
     sql = "SELECT * FROM categories WHERE id = #{id_required}"
     category = SqlRunner.run(sql)
     result = Category.new(category.first)

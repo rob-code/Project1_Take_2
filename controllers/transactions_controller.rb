@@ -18,12 +18,12 @@ end
 post '/transactions' do
 @transaction = Transaction.new(params)
 @transaction.save
-@categories = Category.return_by_id(@transaction.category_id)
+@categories = Category.find_by_id(@transaction.category_id)
 erb(:'transactions/confirm')
 end
 
 get '/transactions/:id/edit' do
-@transaction = Transaction.return_by_id(params[:id])
+@transaction = Transaction.find_by_id(params[:id])
 @categories = Category.all
 erb(:'transactions/edit')
 end

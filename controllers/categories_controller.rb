@@ -28,7 +28,7 @@ redirect to("categories/manage")
 end
 
 get '/categories/:id/edit' do
-@category = Category.return_by_id(params[:id])
+@category = Category.find_by_id(params[:id])
 erb(:'categories/edit')
 end
 
@@ -40,7 +40,7 @@ end
 
 
 get '/categories/:id' do
-@category = Category.return_by_id(params[:id])
+@category = Category.find_by_id(params[:id])
 @transactions = Transaction.all
 erb(:"/categories/index")
 end

@@ -5,7 +5,7 @@ require('pry-byebug')
 require('./models/budget.rb')
 
 get '/budgets/:id/edit' do 
-@budget = Budget.return_by_id(params[:id])
+@budget = Budget.find_by_id(params[:id])
 erb(:'budgets/edit')
 end
 

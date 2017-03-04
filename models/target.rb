@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 
+
 class Target
 
   attr_accessor :amount, :category_id
@@ -34,7 +35,7 @@ class Target
     return self.get_many(sql)
   end
 
-  def self.return_by_id(id_required)
+  def self.find_by_id(id_required)
     sql = "SELECT * FROM targets WHERE id = #{id_required}"
     target = SqlRunner.run(sql)
     result = Target.new(target.first)

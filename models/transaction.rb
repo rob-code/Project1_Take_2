@@ -1,6 +1,8 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./crud.rb')
 
-class Transaction
+
+class Transaction < Crud
 
   attr_accessor :merchant_name, :amount, :category_id
   attr_reader :id
@@ -22,6 +24,9 @@ class Transaction
 #   total_spend = SqlRunner.run(sql).first
 #   return total_spend['sum'].to_f
 # end
+
+
+
 
 def self.spend_by_category()
   sql = "SELECT categories.id, categories.name, SUM(transactions.amount) FROM transactions INNER JOIN categories ON categories.id = transactions.category_id GROUP BY categories.id"
@@ -49,7 +54,7 @@ def self.all
   return self.get_many(sql)
 end
 
-def self.return_by_id(id_required)
+def self.find_by_id(id_required)
   sql = "SELECT * FROM transactions WHERE id = #{id_required}"
   transaction = SqlRunner.run(sql)
   result = Transaction.new(transaction.first)

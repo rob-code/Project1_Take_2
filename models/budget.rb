@@ -33,7 +33,7 @@ class Budget
     return self.get_many(sql)
   end
 
-  def self.return_by_id(id_required)
+  def self.find_by_id(id_required)
     sql = "SELECT * FROM budgets WHERE id = #{id_required}"
     budget = SqlRunner.run(sql)
     result = Budget.new(budget.first)
